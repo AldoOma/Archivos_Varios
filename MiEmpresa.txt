@@ -1,0 +1,250 @@
+use MiEmpresa
+switched to db MiEmpresa
+db.createCollection("Producto0")
+{ ok: 1 }
+db.createCollection("Clientes")
+{ ok: 1 }
+db.createCollection("Proveedores")
+{ ok: 1 }
+db.createCollection("Producto")
+{ ok: 1 }
+show collections
+Clientes
+Producto
+Proveedores
+db.Proveedores.drop()
+true
+db.Clientes.insertOne({})
+{
+  acknowledged: true,
+  insertedId: ObjectId("654ff727fbaad7b921126942")
+}
+db.Clientes.insertOne(	{
+		"Nombre": "Aldo",
+		"Apellido": "Molina",
+		"Ncedula" : "0010809001046P",
+		"Ciudad" : "Managua",
+		"Edad"	: "23",
+		"Correo" : "aldoomar.molina@gmail.com",
+		"Telefono" : "123456789",
+		"" : ""
+		})
+{
+  acknowledged: true,
+  insertedId: ObjectId("654ff863fbaad7b921126943")
+}
+db.Clientes.insertMany( [	{
+		"Nombre": "Mariel",
+		"Apellido": "Castro",
+		"Ncedula" : "0010809001046Y",
+		"Ciudad" : "Masaya",
+		"Edad"	: "23",
+		"Correo" : "mariel.castro@gmail.com",
+		"Telefono" : "123456789",
+		"" : ""
+    },
+		{
+			"Nombre": "Yosuer",
+		"Apellido": "Martinez",
+		"Ncedula" : "0010809001046Y",
+		"Ciudad" : "Managua",
+		"Edad"	: "23",
+		"Correo" : "yosuer.martinez@gmail.com",
+		"Telefono" : "123456789",
+		"" : ""
+		}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("654ffa28fbaad7b921126944"),
+    '1': ObjectId("654ffa28fbaad7b921126945")
+  }
+}
+db.Clientes.insertOne( {
+"_id": "12345", "Nombre": "Silvia",
+"Apellido": "Mende<",
+"noCedula": "002020145156L",
+"Ciudad": "Managua,
+"Edad": "24",
+"Correo": "silvia@gmail.com",
+"Celular": "789456123,
+})
+Error: clone(t={}){const r=t.loc||{};return e({loc:new Position("line"in r?r.line:this.loc.line,"column"in r?r.column:...<omitted>...)} could not be cloned.
+db.Clientes.insertOne( {
+"_id": "12345", "Nombre": "Silvia",
+"Apellido": "Mendez",
+"noCedula": "001789541054L",
+"Ciudad": "Managua",
+"Edad": "45",
+"Correo": "silvia@gmail.com",
+"Celular": "7896545621",
+"" : ""
+})
+{
+  acknowledged: true,
+  insertedId: '12345'
+}
+db.Clientes.insertOne( {
+"_id": "987456", "Nombre": "Silvia",
+"Apellido": "Mendez",
+"noCedula": "001789541054L",
+"Ciudad": "Managua",
+"Edad": "45",
+"Correo": "silvia@gmail.com",
+"Celular": "7896545621",
+"" : ""
+})
+{
+  acknowledged: true,
+  insertedId: '987456'
+}
+db.Clientes.find().pretty()
+db.Clientes.find().pretty()
+{
+  _id: ObjectId("654ff863fbaad7b921126943"),
+  Nombre: 'Aldo',
+  Apellido: 'Molina',
+  Ncedula: '0010809001046P',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'aldoomar.molina@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+{
+  _id: ObjectId("654ffa28fbaad7b921126944"),
+  Nombre: 'Mariel',
+  Apellido: 'Castro',
+  Ncedula: '0010809001046Y',
+  Ciudad: 'Masaya',
+  Edad: '23',
+  Correo: 'mariel.castro@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+{
+  _id: ObjectId("654ffa28fbaad7b921126945"),
+  Nombre: 'Yosuer',
+  Apellido: 'Martinez',
+  Ncedula: '0010809001046Y',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'yosuer.martinez@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+{
+  _id: '12345',
+  Nombre: 'Silvia',
+  Apellido: 'Mendez',
+  noCedula: '001789541054L',
+  Ciudad: 'Managua',
+  Edad: '45',
+  Correo: 'silvia@gmail.com',
+  Celular: '7896545621',
+  '': ''
+}
+{
+  _id: '987456',
+  Nombre: 'Silvia',
+  Apellido: 'Mendez',
+  noCedula: '001789541054L',
+  Ciudad: 'Managua',
+  Edad: '45',
+  Correo: 'silvia@gmail.com',
+  Celular: '7896545621',
+  '': ''
+}
+db.Clientes.find({_id:"12345"})
+{
+  _id: '12345',
+  Nombre: 'Silvia',
+  Apellido: 'Mendez',
+  noCedula: '001789541054L',
+  Ciudad: 'Managua',
+  Edad: '45',
+  Correo: 'silvia@gmail.com',
+  Celular: '7896545621',
+  '': ''
+}
+db.Clientes.find({"Ciudad":"12345"})
+db.Clientes.find({"Ciudad":"Managua"})
+{
+  _id: ObjectId("654ff863fbaad7b921126943"),
+  Nombre: 'Aldo',
+  Apellido: 'Molina',
+  Ncedula: '0010809001046P',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'aldoomar.molina@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+{
+  _id: ObjectId("654ffa28fbaad7b921126945"),
+  Nombre: 'Yosuer',
+  Apellido: 'Martinez',
+  Ncedula: '0010809001046Y',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'yosuer.martinez@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+{
+  _id: '12345',
+  Nombre: 'Silvia',
+  Apellido: 'Mendez',
+  noCedula: '001789541054L',
+  Ciudad: 'Managua',
+  Edad: '45',
+  Correo: 'silvia@gmail.com',
+  Celular: '7896545621',
+  '': ''
+}
+{
+  _id: '987456',
+  Nombre: 'Silvia',
+  Apellido: 'Mendez',
+  noCedula: '001789541054L',
+  Ciudad: 'Managua',
+  Edad: '45',
+  Correo: 'silvia@gmail.com',
+  Celular: '7896545621',
+  '': ''
+}
+db.Clientes.find({"Ciudad":"Managua","Edad":"23"})
+{
+  _id: ObjectId("654ff863fbaad7b921126943"),
+  Nombre: 'Aldo',
+  Apellido: 'Molina',
+  Ncedula: '0010809001046P',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'aldoomar.molina@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}db.Clientes.updateOne({_id: ObjectId("654ffa28fbaad7b921126945")},
+                      {$set:{Nombre:"Josue"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.Clientes.find({_id:ObjectId("654ffa28fbaad7b921126945")})
+{
+  _id: ObjectId("654ffa28fbaad7b921126945"),
+  Nombre: 'Josue',
+  Apellido: 'Martinez',
+  Ncedula: '0010809001046Y',
+  Ciudad: 'Managua',
+  Edad: '23',
+  Correo: 'yosuer.martinez@gmail.com',
+  Telefono: '123456789',
+  '': ''
+}
+db.Clientes.updateMany({Ciudad:"Managua"},
+                      {$set:{Estado:"Habilitado"}})
+

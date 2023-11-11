@@ -1,0 +1,87 @@
+https://www.canva.com/design/DAFlJemXYbg/QO3PsqsaWi2ZVo92L0k6qQ/view?utm_content=DAFlJemXYbg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#13
+
+
+0 -- Enlace Guía de Ejercicios: 
+
+https://www.canva.com/design/DAFlJemXYbg/QO3PsqsaWi2ZVo92L0k6qQ/view?utm_content=DAFlJemXYbg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
+
+Desarrollar:
+
+1 -- Crear la BD Librería. 
+2 -- Crear la Colección "articulo" 
+
+-- Agregar los siguiente documentos
+
+db.articulos.insertOne(
+  {
+    _id: 1,  
+    nombre: 'MULTIFUNCION HP DESKJET 2675',
+    rubro: 'impresora',
+    precio: 3000,
+    stock: 20 
+  }
+)
+db.articulos.insertOne(
+  {
+    _id: 2,  
+    nombre: 'MULTIFUNCION EPSON EXPRESSION XP241',
+    rubro: 'impresora',
+    precio: 3700,
+    stock: 5 
+  }
+)
+db.articulos.insertOne(
+  {
+    _id: 3,  
+    nombre: 'LED 19 PHILIPS',
+    rubro: 'monitor',
+    precio: 4500,
+    stock: 2
+  }
+)
+db.articulos.insertOne(
+  {
+    _id: 4,  
+    nombre: 'LED 22 PHILIPS',
+    rubro: 'monitor',
+    precio: 5700,
+    stock: 4
+  }
+)
+db.articulos.insertOne(
+  {
+    _id: 5,  
+    nombre: 'LED 27 PHILIPS',
+    rubro: 'monitor',
+    precio: 12000,
+    stock: 1
+  }
+)
+
+db.articulos.insertOne(
+  {
+    _id: 6,  
+    nombre: 'LOGITECH M90',
+    rubro: 'mouse',
+    precio: 300,
+    stock: 4
+  }
+)
+
+3 -- Agregar 6 documentos e integrar subdocumentos dentro de la misma.
+4 -- Imprimir todos los documentos de la colección 'articulos'.
+5 -- Imprimir todos los documentos de la colección 'articulos' que no son impresoras.
+6 -- Imprimir todos los artículos que pertenecen al rubro de 'mouse'.
+7 -- Imprimir todos los artículos con un precio mayor o igual a 5000.
+8 -- Imprimir todas las impresoras que tienen un precio mayor o igual a 3500.
+9 -- Imprimir todos los artículos cuyo stock se encuentra comprendido entre 0 y 4.
+
+Investigación:
+10 -- Operadores de Elementos y Operadores Arrays y realizar ejemplos de demostración.
+   -- Funciones de agregado(Aggregation) y funciones de fecha con ejemplos de demostración.
+
+11 -- Entregar en plataforma en formato .txt or .doc
+
+Sitio de Referencia de estudio:
+https://www.codehoven.com/mongodb-aggregate-operaciones-agregacion-pipeline/
+https://medium.com/@diego.coder/agregaciones-y-tuber%C3%ADas-en-mongo-db-aggregation-operations-67adb83080d0
